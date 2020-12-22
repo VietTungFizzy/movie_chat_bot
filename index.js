@@ -19,6 +19,7 @@ app.get('/getmovie', (req, res) => {
 		req.body && req.body.result && req.body.result.parameters && req.body.result.parameters.movie
 			? req.body.result.parameters.movie
             : ''
+    res.status(200).send(req.body)
     const reqUrl = encodeURI(
         `http://www.omdbapi.com/?apikey=${process.env.API_KEY}&t=${movieToSearch}`
     )
