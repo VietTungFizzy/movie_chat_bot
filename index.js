@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.status(200).send('Server is working.')
 })
 
-app.get('/getmovie', (req, res) => {
+app.post('/getmovie', (req, res) => {
     const movieToSearch =
 		req.body && req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.movie
 			? req.body.queryResult.parameters.movie
