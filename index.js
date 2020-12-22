@@ -42,7 +42,14 @@ app.get('/getmovie', (req, res) => {
 					source: 'getmovie'
                 })
             })
-        }
+        },
+		error => {
+			return res.json({
+                fulfillmentText: 'Could not get results at this time',
+                datasend: req.body,
+				source: 'getmovie'
+			})
+		}
     )
 })
 app.listen(port, () => {
